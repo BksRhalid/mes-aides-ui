@@ -51,3 +51,8 @@ tmp
 
 .v8flags.*.json
 v8-compile-cache-*/
+
+# Stats
+
+app/documents/stats.json
+dist/documents/stats.json
