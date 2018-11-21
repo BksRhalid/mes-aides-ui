@@ -88,7 +88,7 @@ jobs:
       - *install_pip_and_pipenv
       - run:
           name: Install OpenFisca
-          command: pipenv --three install -r openfisca/requirements.txt
+          command: pipenv --three --python 3.7 install -r openfisca/requirements.txt
       - persist_to_workspace:
           root: .
           paths:
