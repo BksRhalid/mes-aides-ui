@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[packages]
+gunicorn = ">=19.1.1"
+openfisca-bacasable = {git = "https://github.com/betagouv/openfisca-bacASable.git"}
+openfisca-paris = {git = "https://github.com/betagouv/openfisca-paris.git"}
+openfisca-brestmetropole = {git = "https://github.com/betagouv/openfisca-brestmetropole.git"}
+openfisca-rennesmetropole = {git = "https://github.com/betagouv/openfisca-rennesmetropole.git"}
+OpenFisca-France = "==29.2.0"
+OpenFisca-Core = {git = "https://github.com/openfisca/openfisca-core.git", ref = "simplify-cycle-detection", extras = ["web-api"]}
+
+[requires]
+python_version = "3.7"
