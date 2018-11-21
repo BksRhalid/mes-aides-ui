@@ -21,7 +21,7 @@ install_pip_and_pipenv: &install_pip_and_pipenv
   run:
     name: Upgrade pip & pipenv
     command: |
-      pip3 install pipenv==2018.10.13
+      pip install pipenv==2018.10.13
 
 configure_watai: &configure_watai
   run:
