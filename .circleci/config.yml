@@ -87,6 +87,9 @@ jobs:
       - checkout
       - *install_pip_and_pipenv
       - run:
+          name: Install OpenSSL
+          command: apt-get install openssl
+      - run:
           name: Install OpenFisca
           command: pipenv --python 3.7 install
       - persist_to_workspace:
