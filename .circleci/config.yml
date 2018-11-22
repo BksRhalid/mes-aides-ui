@@ -15,6 +15,8 @@ defaults: &defaults
     SAUCE_USERNAME: mes-aides-bot
     OPENFISCA_BIND_HOST: 127.0.0.1:2000
     PIPENV_VENV_IN_PROJECT: true
+    LC_ALL: C.UTF-8
+    LANG: C.UTF-8
     # PYTHON_VERSION: 3.7.1
 
 install_pip_and_pipenv: &install_pip_and_pipenv
