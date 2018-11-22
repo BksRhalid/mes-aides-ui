@@ -21,7 +21,7 @@ install_pip_and_pipenv: &install_pip_and_pipenv
   run:
     name: Upgrade pip & pipenv
     command: |
-      pip install pipenv==2018.10.13
+      pip3 install pipenv==2018.10.13
 
 configure_watai: &configure_watai
   run:
@@ -87,11 +87,8 @@ jobs:
       - checkout
       - *install_pip_and_pipenv
       - run:
-          name: Install OpenSSL
-          command: apt-get install openssl libssl-dev
-      - run:
           name: Install OpenFisca
-          command: pipenv --python 3.7 install
+          command: pipenv --python 3.6 install
       - persist_to_workspace:
           root: .
           paths:
