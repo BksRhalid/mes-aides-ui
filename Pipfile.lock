@@ -113,11 +113,11 @@
         },
         "openfisca-bacasable": {
             "git": "https://github.com/betagouv/openfisca-bacASable.git",
-            "ref": "6257329d2cabf97511081149708b3fd04213ee8f"
+            "ref": "855126165afcbdd537d39cf734ff82a711c52a19"
         },
         "openfisca-brestmetropole": {
             "git": "https://github.com/betagouv/openfisca-brestmetropole.git",
-            "ref": "159ca463aa37ea21fb3934491fd9a0c323f44773"
+            "ref": "f0310de9923eda9974d21fe17d3d9313e03aa8aa"
         },
         "openfisca-core": {
             "extras": [
@@ -140,7 +140,7 @@
         },
         "openfisca-rennesmetropole": {
             "git": "https://github.com/betagouv/openfisca-rennesmetropole.git",
-            "ref": "1043affc407d0dcce904f948a99db2fd061f5c0e"
+            "ref": "99a78a5ad01b11ff326fc5bce1e23f69f4ae80e5"
         },
         "psutil": {
             "hashes": [
