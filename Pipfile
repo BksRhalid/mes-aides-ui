@@ -15,4 +15,4 @@ OpenFisca-France = "==29.2.0"
 OpenFisca-Core = {git = "https://github.com/openfisca/openfisca-core.git", ref = "simplify-cycle-detection", extras = ["web-api"]}
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"
