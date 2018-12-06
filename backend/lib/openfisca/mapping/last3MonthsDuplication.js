@@ -40,7 +40,7 @@ var menageProperties = [
     'logement_chambre',
     'loyer',
     'participation_frais',
-    'statut_occupation_logement',
+    'statut_occupation_logement'
 ];
 
 function copyTo3PreviousMonths(testCase, dateDeValeur) {
