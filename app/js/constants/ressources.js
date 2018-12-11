@@ -141,15 +141,17 @@
         },
         {
             id: 'caah',
-            label: 'Complément à l’Allocation adulte handicapé (AAH)',
+            label: 'Complément de ressources adulte handicapé',
             category: 'allocations',
-            prefix: 'le'
+            prefix: 'le',
+            montantForfaitaire: true
         },
         {
             id: 'mva',
             label: 'Majoration pour vie autonome (MVA)',
             category: 'allocations',
-            prefix: 'la'
+            prefix: 'la',
+            montantForfaitaire: true
         },
         {
             id: 'aeeh',
@@ -258,7 +260,8 @@
             id: 'retraite_combattant',
             label: 'Retraite du combattant',
             category: 'pensions',
-            prefix: 'une'
+            prefix: 'une',
+            montantForfaitaire: true
         },
         {
             id: 'pensions_invalidite',
