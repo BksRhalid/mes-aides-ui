@@ -139,7 +139,7 @@
         <h2>{{ droit.label }}</h2>
       </div>
 
-      <div class="droits-eligibles-list-item-right">
+      <div class="droits-eligibles-list-item-right" ng-if="droit.montant && (isString(droit.montant) || isNumber(droit.montant))">
         <div class="droit-montant">
           <span ng-if="isNumber(droit.montant)" class="montant">
             {{ droit.montant | currency : ( droit.unit || '€' ) : (droit.roundToNearestCent ? 2 : 0 ) }}
