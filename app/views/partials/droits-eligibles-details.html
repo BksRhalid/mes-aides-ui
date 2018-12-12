@@ -1,0 +1,82 @@
+<div ng-repeat="droit in list" id="{{ droit.id }}" style="margin-bottom: 30px;">
+
+  <h3>
+    <strong>{{ droit.label }}</strong>
+    <span ng-if="isNumber(droit.montant)" class="pull-right">
+      {{ droit.montant | currency : ( droit.unit || '€' ) : (droit.roundToNearestCent ? 2 : 0 ) }}
+    </span>
+    <span ng-if="isString(droit.montant)" class="pull-right montant-inconnu">?</span>
+  </h3>
+
+  <div class="alert alert-warning-inverse" ng-if="droit.isBaseRessourcesYearMoins2 && ! ressourcesYearMoins2Captured && ! isString(droit.montant)">
+    <i class="fa fa-warning" aria-hidden="true"></i> Cette aide se base sur vos ressources de l'année {{ yearMoins2 }}.
+    <a ui-sref="foyer.ressourcesYearMoins2">Déclarez vos ressources {{ yearMoins2 }}</a>
+  </div>
+
+  <p ng-bind-html="droit.description"></p>
+
+  <div ng-if="droit.conditions">
+    <p>Pour en bénéficier, vous devez également :</p>
+    <ul class="list-unstyled">
+      <li ng-repeat="condition in droit.conditions">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        <span ng-bind-html="condition"></span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="{{ droit.teleservice || droit.form || droit.instructions }}"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-sm"
+        ng-class="{
+          'btn-success': droit.teleservice,
+          'btn-primary': droit.form,
+          'btn-default': droit.instructions,
+        }"
+        analytics-on="click"
+        analytics-name="{{ droit.label }}"
+        analytics-event="{{ droit.teleservice || droit.form || droit.instructions }}"
+        analytics-category="Action"
+        >
+        <span ng-if="droit.teleservice">Faire une demande</span>
+        <span ng-if="droit.form">Accéder au formulaire</span>
+        <span ng-if="droit.instructions">Accéder aux instructions</span>
+      </a>
+    </div>
+    <div class="col-xs-6 text-right">
+      <a
+        ng-if="droit.link && ! droit.internalLink"
+        class="btn btn-sm btn-default"
+        href="{{ droit.link }}"
+        target="_blank"
+        rel="noopener"
+        analytics-on="click"
+        analytics-name="{{ droit.label }}"
+        analytics-event="{{ droit.link }}"
+        analytics-category="Info"
+        >
+        <i class="fa fa-external-link" aria-hidden="true" role="presentation"></i>
+        Plus d'informations
+      </a>
+      <a
+        ng-if="droit.internalLink"
+        class="btn btn-sm btn-default"
+        ng-click="trampoline.set({ situationId: situation._id, montant: droit.montant })"
+        ui-sref="{{ droit.internalLink }}"
+        target="_blank"
+        rel="noopener"
+        analytics-on="click"
+        analytics-name="{{ droit.label }}"
+        analytics-event="{{ droit.internalLink }}"
+        analytics-category="Info"
+        >
+        <i class="fa fa-external-link" aria-hidden="true" role="presentation"></i>
+        Plus d'informations
+      </a>
+    </div>
+  </div>
+
+</div>

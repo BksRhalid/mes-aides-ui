@@ -1,3 +1,4 @@
+<!--
 <uib-accordion close-others="false" class="droits-eligibles">
   <uib-accordion-group is-open="droit.open"
      class="result {{ getAccordionClass(droit) }}"
@@ -25,7 +26,6 @@
           <div ng-if="isNumber(droit.montant)" class="montant-detail">
             {{ droit.legend || (droit.isMontantAnnuel ? '/ an' : '/ mois') }}
           </div>
-
         </div>
 
         <div class="col-sm-1 col-xs-1 description">
@@ -127,3 +127,31 @@
     </div>
   </uib-accordion-group>
 </uib-accordion>
+-->
+
+<div class="droits-eligibles-list">
+  <div ng-repeat="droit in list">
+
+    <a ui-sref="foyer.resultat({ '#': droit.id })" class="droits-eligibles-list-item">
+
+      <div class="droits-eligibles-list-item-left">
+        <img ng-src="/img/{{ droit.provider.imgSrc }}" alt="{{ droit.label }}">
+        <h2>{{ droit.label }}</h2>
+      </div>
+
+      <div class="droits-eligibles-list-item-right">
+        <div class="droit-montant">
+          <span ng-if="isNumber(droit.montant)" class="montant">
+            {{ droit.montant | currency : ( droit.unit || '€' ) : (droit.roundToNearestCent ? 2 : 0 ) }}
+          </span>
+          <span ng-if="isString(droit.montant)" class="montant-inconnu">?</span>
+          <span ng-if="isNumber(droit.montant)" class="montant-detail">
+            {{ droit.legend || (droit.isMontantAnnuel ? '/ an' : '/ mois') }}
+          </span>
+        </div>
+      </div>
+
+    </a>
+
+  </div>
+</div>
