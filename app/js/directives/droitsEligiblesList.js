@@ -14,6 +14,28 @@ var mergeDroits = function(prestationsNationales, partenairesLocaux) {
     return droits;
 };
 
+angular.module('ddsApp').controller('droitsEligiblesListCtrl', function($scope, TrampolineService) {
+
+    $scope.isNumber = _.isNumber;
+    $scope.isString = _.isString;
+
+    $scope.$watch('droits', function(value) {
+        if (value) {
+            $scope.list = mergeDroits(value.prestationsNationales, value.partenairesLocaux);
+        }
+    });
+
+    scope.trampoline = TrampolineService;
+    scope.isNumber = _.isNumber;
+    scope.isString = _.isString;
+    scope.list = [];
+
+    // $scope.shouldDisplayYM2Warning = function(droit) {
+    //     return droit.isBaseRessourcesYearMoins2 && ! $scope.ressourcesYearMoins2Captured && ! _.isString(droit.montant);
+    // };
+
+});
+
 var controllerOptions = function(templateUrl) {
     return function(TrampolineService) {
         return {
@@ -23,6 +45,8 @@ var controllerOptions = function(templateUrl) {
                 droits: '=',
                 yearMoins2: '=',
             },
+            controller: 'droitsEligiblesListCtrl',
+            /*
             // Inject list into scope, filtered by benefits specified via the "filter" attribute
             link: function (scope, element, attributes) {
 
@@ -51,6 +75,7 @@ var controllerOptions = function(templateUrl) {
                 //     $scope.list = $scope.$eval($attributes.list);
                 // }
             }
+            */
         };
     };
 };
