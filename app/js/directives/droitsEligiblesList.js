@@ -25,10 +25,10 @@ angular.module('ddsApp').controller('droitsEligiblesListCtrl', function($scope, 
         }
     });
 
-    scope.trampoline = TrampolineService;
-    scope.isNumber = _.isNumber;
-    scope.isString = _.isString;
-    scope.list = [];
+    $scope.trampoline = TrampolineService;
+    $scope.isNumber = _.isNumber;
+    $scope.isString = _.isString;
+    $scope.list = [];
 
     // $scope.shouldDisplayYM2Warning = function(droit) {
     //     return droit.isBaseRessourcesYearMoins2 && ! $scope.ressourcesYearMoins2Captured && ! _.isString(droit.montant);
