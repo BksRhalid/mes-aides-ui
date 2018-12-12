@@ -37,7 +37,7 @@ angular.module('ddsApp').controller('droitsEligiblesListCtrl', function($scope, 
 });
 
 var controllerOptions = function(templateUrl) {
-    return function(TrampolineService) {
+    return function() {
         return {
             restrict: 'E',
             templateUrl: templateUrl,
