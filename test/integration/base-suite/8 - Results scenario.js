@@ -5,6 +5,7 @@ steps: [
         'ResultComponent.title': /Résultats/,
     },
     {
+        timeout: 20000,
         'ResultComponent.resultatFrame': true,
     },
     {
