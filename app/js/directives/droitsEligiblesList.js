@@ -4,7 +4,7 @@ var mergeDroits = function(prestationsNationales, partenairesLocaux) {
 
     var droits = _.values(prestationsNationales);
     _.forEach(partenairesLocaux, function(partenaireLocal) {
-        droits = droits.concat(_.values(partenaireLocal.prestations))
+        droits = droits.concat(_.values(partenaireLocal.prestations));
     });
 
     droits.sort(function(a, b) {
@@ -12,7 +12,7 @@ var mergeDroits = function(prestationsNationales, partenairesLocaux) {
     });
 
     return droits;
-}
+};
 
 var controllerOptions = function(templateUrl) {
     return function(TrampolineService) {
