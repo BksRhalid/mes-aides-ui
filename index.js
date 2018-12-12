@@ -63,7 +63,7 @@ module.exports = function(app) {
     app.use('/documents', express.static(path.join(__dirname, 'dist/documents'), CACHE.FIVE_MINUTES));
     app.use(              express.static(path.join(__dirname, 'dist'),           CACHE.NONE));
 
-    app.use(bodyParser.urlencoded({ limit: '1024kb' }));
+    app.use(bodyParser.urlencoded({ extended: true }));
 
     // Route to download a PDF
     app.route('/foyer/resultat').post(function(req, res) {
