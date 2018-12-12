@@ -2,7 +2,7 @@ title: 'h1',
 
 resultatFrame: '.droits-eligibles-list',
 
-prestationName: '.droits-eligibles-list .droits-eligibles-list-item:nth-child(' + PRESTATION_TO_TEST_POSITION + ') .description',
+prestationName: '.droits-eligibles-list .droits-eligibles-list-item:nth-child(' + PRESTATION_TO_TEST_POSITION + ') h2',
 prestationMontant: '.droits-eligibles-list .droits-eligibles-list-item:nth-child(' + PRESTATION_TO_TEST_POSITION + ') .montant',
 prestationMontantDetail: '.droits-eligibles-list .droits-eligibles-list-item:nth-child(' + PRESTATION_TO_TEST_POSITION + ') .montant-detail',
 prestationYM2Warning: '.droits-eligibles-list .droits-eligibles-list-item:nth-child(' + PRESTATION_TO_TEST_POSITION + ') i.fa-warning',
