@@ -109,8 +109,8 @@ exports.buildOpenFiscaRequest = function(sourceSituation) {
         aide_logement_date_pret_conventionne: {}
     }, situation.menage);
 
-    menage.logement_conventionne[periods.thisMonth] = false;
-    menage.aide_logement_date_pret_conventionne[periods.thisMonth] = '2017-12-31';
+//    menage.logement_conventionne[periods.thisMonth] = false;
+//    menage.aide_logement_date_pret_conventionne[periods.thisMonth] = '2017-12-31';
 
     var testCase = {
         individus: individus,
